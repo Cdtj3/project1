@@ -8,7 +8,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Scrolling Nav - Start Bootstrap Template</title>
+        <title>Voetbalclub avv</title>
 
         <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -25,9 +25,9 @@
         <?php require "header.html";?>
 
         <header>
-        <div class="signup_header">
-            <img src="image/001.jpg">
-        </div>
+            <div class="signup_header">
+                <img src="image/001.jpg">
+            </div>
         </header>
 
         <section id="about">
