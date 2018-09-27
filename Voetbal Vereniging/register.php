@@ -8,9 +8,9 @@
     <body>
         <?php require "header.html";?>
 
-        <div class="signup_logo">
-            <img src="image/clublogo.png">
-        </div>
+<!--        <div class="signup_logo">-->
+<!--            <img src="image/clublogo.png">-->
+<!--        </div>-->
         <div class="signup_header">
             <img src="image/001.jpg">
         </div>
