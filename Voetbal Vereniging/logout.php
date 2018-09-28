@@ -1,7 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: enric
- * Date: 28-9-2018
- * Time: 15:06
- */
+session_start();
+unset($_SESSION["username"]);
+unset($_SESSION["password"]);
+
+echo 'You have cleaned session';
+header('Refresh: 2; URL = login.php');
+?>
