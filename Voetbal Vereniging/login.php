@@ -3,8 +3,7 @@
 <html>
 <head>
 	<title>Registratie & login </title>
-	<link rel="stylesheet" type="text/css" href="voetbalstyles.css">
-    <img src="https://www.as80.nl/site/img/clublogo3.png" alt="voetballogo" class="voetballogo">
+	<link rel="stylesheet" type="text/css" href="css/voetbalstyles.css">
     <img src="https://www.as80.nl/files/library/header/nieuw/001.jpg" alt="voetbalplaatje" class="voetbalplaatje">
 </head>
 <body>
@@ -32,7 +31,6 @@
 			Nog geen account? <a href="register.php">Sign up</a>
 		</p>
 	</form>
-
 
 </body>
 </html>
