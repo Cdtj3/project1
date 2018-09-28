@@ -1,3 +1,4 @@
+<?php include('server.php') ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -16,16 +17,21 @@
         </div>
 
         <div class="signup_container">
-            <label for="name"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required>
+            <form method="post" action="register.php">
 
-            <label for="password"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required>
-
-            <button type="submit">Login</button>
-            <label>
-                <input type="checkbox" name="remember"> Remember me
-            </label>
+                <?php include('errors.php'); ?>
+                <label>Gebruikersnaam</label>
+                <input type="text" name="username" value="<?php echo $username; ?>">
+<!--                <label>Email-adres</label>-->
+<!--                <input type="email" name="email" value="--><?php //echo $email; ?><!--">-->
+                <label>Email-adres</label>
+                <input type="email" name="email" value="<?php echo $email; ?>">
+                <label>wachtwoord</label>
+                <input type="password" name="password_1">
+                <label>bevestig wachtwoord</label>
+                <input type="password" name="password_2">
+                <button type="submit" class="btn" name="reg_user">registreren</button>
+            </form>
         </div>
     </body>
 </html>

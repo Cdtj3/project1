@@ -1,3 +1,18 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    $_SESSION['msg'] = "You must log in first";
+    header('location: login.php');
+}
+
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header("location: login.php");
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,41 +49,26 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mx-auto">
-                        <h2>Info?</h2>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod</p>
-                        <ul>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod</li>
-                            <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur euismod</li>
-                        </ul>
-                        <p>Mauris sagittis, lacus ut porttitor vestibulum, odio risus posuere lorem, a convallis justo neque ut neque. Donec id imperdiet lectus, ut pellentesque mauris. Integer at suscipit lectus. Sed accumsan rutrum arcu, vitae porta dui porta sit amet. Vestibulum vulputate faucibus mauris eget lacinia. Duis non ipsum vel nunc convallis luctus.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+                        <div class="content">
 
-        <section id="services" class="bg-light">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <h2>Services we offer</h2>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut optio velit inventore, expedita quo laboriosam possimus ea consequatur vitae, doloribus consequuntur ex. Nemo assumenda laborum vel, labore ut velit dignissimos.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+                            <!-- notification message -->
+                            <?php if (isset($_SESSION['success'])) : ?>
+                                <div class="error success" >
+                                    <h3>
+                                        <?php
+                                        echo $_SESSION['success'];
+                                        unset($_SESSION['success']);
+                                        ?>
+                                    </h3>
+                                </div>
+                            <?php endif ?>
 
-        <section id="contact">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <h2>Contact us</h2>
-                        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae ipsa exercitationem, in, quo totam.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+                            <!-- logged in user information -->
+                            <?php  if (isset($_SESSION['username'])) : ?>
+                                <p>Welkom bij Almere AS80 <strong><?php echo $_SESSION['username']; ?></strong></p>
+                                <p> <a href="index.php?logout='1'" style="color: red;">logout</a> </p>
+                            <?php endif ?>
+                        </div>
 
         <!-- Footer -->
         <?php require "footer.html";?>
