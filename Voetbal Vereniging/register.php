@@ -5,13 +5,10 @@
         <title>Voetbalclub avv</title>
         <link rel="stylesheet" href="css\voetbalstyles.css">
     </head>
-<!--<form action="action_page.php">-->
+
     <body>
         <?php require "header.html";?>
 
-<!--        <div class="signup_logo">-->
-<!--            <img src="image/clublogo.png">-->
-<!--        </div>-->
         <div class="signup_header">
             <img src="image/001.jpg">
         </div>
@@ -22,8 +19,6 @@
                 <?php include('errors.php'); ?>
                 <label>Gebruikersnaam</label>
                 <input type="text" name="username" value="<?php echo $username; ?>">
-<!--                <label>Email-adres</label>-->
-<!--                <input type="email" name="email" value="--><?php //echo $email; ?><!--">-->
                 <label>Email-adres</label>
                 <input type="email" name="email" value="<?php echo $email; ?>">
                 <label>wachtwoord</label>

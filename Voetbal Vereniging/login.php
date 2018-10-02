@@ -7,7 +7,6 @@
     <img src="https://www.as80.nl/files/library/header/nieuw/001.jpg" alt="voetbalplaatje" class="voetbalplaatje">
 </head>
 <body>
-
 	<div class="header">
 		<h2>Login</h2>
 	</div>

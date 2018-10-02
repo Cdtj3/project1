@@ -7,32 +7,16 @@ if (!isset($_SESSION['username'])) {
 }
 
 ?>
+<?php require "header.html";?>
+<link rel="stylesheet" href="css\voetbalstyles.css">
 <!DOCTYPE html>
 <html lang="en">
 
     <head>
-
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-
         <title>Voetbalvereniging AS'80</title>
-
-        <!-- Bootstrap core CSS -->
-        <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-        <!-- Custom styles for this template -->
-        <link href="css/scrolling-nav.css" rel="stylesheet">
-        <link rel="stylesheet" href="css\voetbalstyles.css">
-
     </head>
 
     <body id="page-top">
-
-        <!-- Navigation -->
-        <?php require "header.html";?>
-
         <header>
             <div class="signup_header">
                 <img src="image/001.jpg">
@@ -66,16 +50,6 @@ if (!isset($_SESSION['username'])) {
         <!-- Footer -->
         <?php require "footer.html";?>
 
-        <!-- Bootstrap core JavaScript -->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-        <!-- Plugin JavaScript -->
-        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-        <!-- Custom JavaScript for this theme -->
-        <script src="js/scrolling-nav.js"></script>
 
     </body>
-
 </html>
