@@ -3,16 +3,20 @@
 <html>
 <head>
     <title>Voetbalvereniging AS'80</title>
-    <link rel="stylesheet" href="css\voetbalstyles.css">
-    <div class="imgcontainer">
-        <img src="image/001.jpg" alt="voetbalplaatje" class="voetbalplaatje">
-    </div>
-<h1>Upload hier uw foto's/video's</h1>
+    <link rel="stylesheet" href="css\head.css">
+    <link rel="stylesheet" href="css\upload.css">
+
 
         <title>Foto's uploaden</title>
 
     </head>
 <body>
+<header>
+    <div class="signup_header">
+        <img src="image/001.jpg">
+    </div>
+</header>
+<h1>Upload hier uw foto's/video's</h1>
         <input type="hidden" name="size" value="1000000">
         <div>
             <input type="file" name="image">
