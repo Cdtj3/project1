@@ -1,16 +1,4 @@
 /* aanmelden page*/
-div.signup_logo img{
-    width: 5%;
-}
-
-div.signup_header img{
-    height: 400px;
-    width: 100%;
-    display: block;
-}
-.signup_container {
-    padding: 16px;
-}
 
 input[type=text], input[type=password], input[type=email] {
     width: 100%;
