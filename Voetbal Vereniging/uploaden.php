@@ -40,6 +40,7 @@ $result = mysqli_query($db, "SELECT * FROM images");
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
     <title>Image Upload</title>
     <style type="text/css">
         #content{
@@ -84,6 +85,23 @@ $result = mysqli_query($db, "SELECT * FROM images");
     }
     ?>
     <form method="POST" action="uploaden.php" enctype="multipart/form-data">
+=======
+    <title>Voetbalvereniging AS'80</title>
+    <link rel="stylesheet" href="css\head.css">
+    <link rel="stylesheet" href="css\upload.css">
+
+
+        <title>Foto's uploaden</title>
+
+    </head>
+<body>
+<header>
+    <div class="signup_header">
+        <img src="image/001.jpg">
+    </div>
+</header>
+<h1>Upload hier uw foto's/video's</h1>
+>>>>>>> d2890593465a424d482f441d2452367b0df122ca
         <input type="hidden" name="size" value="1000000">
         <div>
             <input type="file" name="image">

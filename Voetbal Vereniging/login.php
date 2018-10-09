@@ -3,10 +3,15 @@
 <html>
 <head>
 	<title>Registratie & login </title>
-	<link rel="stylesheet" type="text/css" href="css/voetbalstyles.css">
-    <img src="https://www.as80.nl/files/library/header/nieuw/001.jpg" alt="voetbalplaatje" class="voetbalplaatje">
+	<link rel="stylesheet" type="text/css" href="css/head.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 <body>
+    <header>
+        <div class="signup_header">
+            <img src="image/001.jpg">
+        </div>
+    </header>
 	<div class="header">
 		<h2>Login</h2>
 	</div>

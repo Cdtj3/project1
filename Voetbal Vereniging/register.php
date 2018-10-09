@@ -3,7 +3,8 @@
 <html lang="en">
     <head>
         <title>Voetbalclub avv</title>
-        <link rel="stylesheet" href="css\voetbalstyles.css">
+        <link rel="stylesheet" href="css/head.css">
+        <link rel="stylesheet" href="css/register.css"
     </head>
 
     <body>
