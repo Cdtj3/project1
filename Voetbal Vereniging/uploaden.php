@@ -1,18 +1,89 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    $_SESSION['msg'] = "You must log in first";
+    header('location: login.php');
+}
+
+?>
+<?php
+// Create database connection
+$db = mysqli_connect("localhost:3307", "root", "root", "design_vv");
+
+// Initialize message variable
+$msg = "";
+
+// If upload button is clicked ...
+if (isset($_POST['upload'])) {
+    // Get image name
+    $image = $_FILES['image']['name'];
+    // Get text
+    $image_text = mysqli_real_escape_string($db, $_POST['image_text']);
+
+    // image file directory
+    $target = "images/".basename($image);
+
+    $sql = "INSERT INTO images (image, image_text) VALUES ('$image', '$image_text')";
+    // execute query
+    mysqli_query($db, $sql);
+
+    if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+        $msg = "Image uploaded successfully";
+    }else{
+        $msg = "Failed to upload image";
+    }
+}
+$result = mysqli_query($db, "SELECT * FROM images");
+?>
 <?php require "header.html";?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Voetbalvereniging AS'80</title>
-    <link rel="stylesheet" href="css\voetbalstyles.css">
-    <div class="imgcontainer">
-        <img src="image/001.jpg" alt="voetbalplaatje" class="voetbalplaatje">
-    </div>
-<h1>Upload hier uw foto's/video's</h1>
-
-        <title>Foto's uploaden</title>
-
-    </head>
+    <title>Image Upload</title>
+    <style type="text/css">
+        #content{
+            width: 50%;
+            margin: 20px auto;
+            border: 1px solid #cbcbcb;
+        }
+        form{
+            width: 50%;
+            margin: 20px auto;
+        }
+        form div{
+            margin-top: 5px;
+        }
+        #img_div{
+            width: 80%;
+            padding: 5px;
+            margin: 15px auto;
+            border: 1px solid #cbcbcb;
+        }
+        #img_div:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        img{
+            float: left;
+            margin: 5px;
+            width: 300px;
+            height: 140px;
+        }
+    </style>
+</head>
 <body>
+<div id="content">
+    <?php
+    while ($row = mysqli_fetch_array($result)) {
+        echo "<div id='img_div'>";
+        echo "<img src='images/".$row['image']."' >";
+        echo "<p>".$row['image_text']."</p>";
+        echo "</div>";
+    }
+    ?>
+    <form method="POST" action="uploaden.php" enctype="multipart/form-data">
         <input type="hidden" name="size" value="1000000">
         <div>
             <input type="file" name="image">
@@ -23,12 +94,12 @@
               cols="40"
               rows="4"
               name="image_text"
-              placeholder="Zeg iets over je foto"></textarea>
+              placeholder="Say something about this image..."></textarea>
         </div>
         <div>
-            <button type="submit" name="upload">Uploaden</button>
+            <button type="submit" name="upload">POST</button>
         </div>
     </form>
-
+</div>
 </body>
 </html>
