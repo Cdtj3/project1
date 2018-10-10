@@ -8,7 +8,7 @@
 	$_SESSION['success'] = "";
 
 	// connect to database
-	$db = mysqli_connect('localhost:3307', 'root', 'root', 'design_vv');
+	$db = mysqli_connect('localhost:3307', 'root', 'root', 'registration');
 
 	// REGISTER USER
 	if (isset($_POST['reg_user'])) {
