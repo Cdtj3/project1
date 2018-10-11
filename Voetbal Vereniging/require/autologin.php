@@ -1,5 +1,5 @@
 <?php
-    $query = $conn->prepare("select * from users where username = ? and password = ?");
+    $query = $conn->prepare("select * from member where username = ? and password = ?");
     $query->bindValue(1,$username);
     $query->bindValue(2,hash("sha256", $password));
     $query->execute();
