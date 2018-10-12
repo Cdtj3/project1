@@ -1,6 +1,13 @@
 <?php
 // Create database connection
     require ('require/server.php');
+// Check if user is logged in
+    session_start();
+
+    if (!isset($_SESSION['username'])) {
+        $_SESSION['msg'] = "You must log in first";
+        header('location: login.php');
+    }
 
 // Initialize message variable
     $msg = "";
