@@ -32,12 +32,12 @@ if (isset($_POST['reg_user'])) {
         $query->bindValue(1,$username);
         $query->bindValue(2,$email);
         $query->bindValue(3,hash("sha256", $password));
-        $query->bindValue(2,$name);
-        $query->bindValue(2,$last);
-        $query->bindValue(2,$gender);
-        $query->bindValue(2,$member_col);
-        $query->bindValue(2,$type);
-        $query->bindValue(2,$year_driving_licence);
+        $query->bindValue(4,$name);
+        $query->bindValue(5,$last);
+        $query->bindValue(6,$gender);
+        $query->bindValue(7,$member_col);
+        $query->bindValue(8,$type);
+        $query->bindValue(9,$year_driving_licence);
         $query->execute();
 
         require ('autologin.php');
