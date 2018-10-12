@@ -1,4 +1,4 @@
-<?php include('server.php'); require "header.html";?>
+<?php include('require/server.php'); require "header.html";?>
 <!DOCTYPE html>
 <html>
     <head>
