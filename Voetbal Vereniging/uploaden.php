@@ -1,78 +1,40 @@
-<?php //require "header.html";?>
-<!--<!DOCTYPE html>-->
-<!--<html>-->
-<!--    <head>-->
-<!--        <title>Voetbalvereniging AS'80</title>-->
-<!--        <link rel="stylesheet" href="css\head.css">-->
-<!--        <link rel="stylesheet" href="css\upload.css">-->
-<!--        <title>Foto's uploaden</title>-->
-<!--    </head>-->
-<!--<body>-->
-<!--<header>-->
-<!--    <div class="signup_header">-->
-<!--        <img src="image/001.jpg">-->
-<!--    </div>-->
-<!--</header>-->
-<!--<h1>Upload hier uw foto's/video's</h1>-->
-<!--        <input type="hidden" name="size" value="1000000">-->
-<!--        <div>-->
-<!--            <input type="file" name="image">-->
-<!--        </div>-->
-<!--        <div>-->
-<!--      <textarea-->
-<!--              id="text"-->
-<!--              cols="40"-->
-<!--              rows="4"-->
-<!--              name="image_text"-->
-<!--              placeholder="Zeg iets over je foto"></textarea>-->
-<!--        </div>-->
-<!--        <div>-->
-<!--            <button type="submit" name="upload">Uploaden</button>-->
-<!--        </div>-->
-<!--    </form>-->
-<!---->
-<!--</body>-->
-<!--</html>-->
-
-<?php
-session_start();
-
-if (!isset($_SESSION['username'])) {
-    $_SESSION['msg'] = "You must log in first";
-    header('location: login.php');
-}
-
-?>
 <?php
 // Create database connection
-$db = mysqli_connect("localhost:3307", "root", "root", "design_vv");
+    require ('require/server.php');
 
 // Initialize message variable
-$msg = "";
+    $msg = "";
 
 // If upload button is clicked ...
 if (isset($_POST['upload'])) {
     // Get image name
     $image = $_FILES['image']['name'];
     // Get text
-    $image_text = mysqli_real_escape_string($db, $_POST['image_text']);
+    $image_text = $_POST['image_text'];
 
     // image file directory
     $target = "images/".basename($image);
 
-    $sql = "INSERT INTO images (image, image_text) VALUES ('$image', '$image_text')";
-    // execute query
-    mysqli_query($db, $sql);
 
+    //check if image upload was successful
     if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
+        // execute query
+        $query = $conn->prepare("INSERT INTO images (image, image_text) VALUES (?, ?)");
+        $query->bindValue(1, $image);
+        $query->bindValue(2, $image_text);
+        $query->execute();
         $msg = "Image uploaded successfully";
+        header("location: uploaden.php");
     }else{
         $msg = "Failed to upload image";
     }
 }
-$result = mysqli_query($db, "SELECT * FROM images");
-?>
-<?php require "header.html";?>
+    //select all images from database
+    $query = $conn->prepare("SELECT * from images");
+
+    $query->execute();
+    $result = $query->fetchAll(PDO::FETCH_OBJ);
+    require "header.html";?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -111,14 +73,15 @@ $result = mysqli_query($db, "SELECT * FROM images");
 </head>
 <body>
 <div id="content">
-    <?php
-    while ($row = mysqli_fetch_array($result)) {
+<?php
+    echo $msg;
+    foreach($result as $img) {
         echo "<div id='img_div'>";
-        echo "<img src='images/".$row['image']."' >";
-        echo "<p>".$row['image_text']."</p>";
+        echo "<img src='images/$img->image'>";
+        echo "<p>".$img->image_text."</p>";
         echo "</div>";
     }
-    ?>
+//    ?>
     <form method="POST" action="uploaden.php" enctype="multipart/form-data">
         <input type="hidden" name="size" value="1000000">
         <div>
