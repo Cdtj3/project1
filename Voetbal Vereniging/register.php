@@ -4,7 +4,7 @@
     <head>
         <title>Voetbalclub avv</title>
         <link rel="stylesheet" href="css/head.css">
-        <link rel="stylesheet" href="css/register.css"
+        <link rel="stylesheet" href="css/register.css">
     </head>
 
     <body>
@@ -18,7 +18,7 @@
             <form method="post" action="register.php">
 
                 <?php include('errors.php'); ?>
-                <label>Gebruikersnaam</label>
+                <label><p>Gebruikersnaam</p></label>
                 <input type="text" name="username" value="<?php echo $username; ?>">
                 <label>Email-adres</label>
                 <input type="email" name="email" value="<?php echo $email; ?>">
