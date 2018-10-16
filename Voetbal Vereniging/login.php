@@ -1,40 +1,33 @@
-<?php   include('require/login.php'); require "header.html";?>
-<!DOCTYPE html>
+<?php include('require/login.php'); ?>
 <html>
-<head>
-	<title>Registratie & login </title>
-	<link rel="stylesheet" type="text/css" href="css/head.css">
-    <link rel="stylesheet" type="text/css" href="css/login.css">
-</head>
-<body>
-    <header>
-        <div class="signup_header">
-            <img src="image/001.jpg">
+    <head>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link rel="stylesheet" href="css/login.css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!------ Include the above in your HEAD tag ---------->
+    </head>
+    <body id="LoginForm">
+        <div class="container">
+            <div class="login-form">
+                <div class="main-div">
+                    <div class="panel">
+                        <h2>Login</h2>
+                        <p>Vul uw gebruikersnaam en wachtwoord in.</p>
+                    </div>
+                    <form method="post" action="login2.php">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="username" placeholder="Email Address">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="password" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-primary" name="login_user">Login</button>
+                    </form>
+                </div>
+                <p class="botto-text">Voetbal club AVV</p>
+                </div>
+            </div>
         </div>
-    </header>
-	<div class="header">
-		<h2>Login</h2>
-	</div>
-	
-	<form method="post" action="login.php">
-
-		<?php include('errors.php');?>
-
-		<div class="input-group">
-			<label>Gebruikersnaam</label>
-			<input type="text" name="username" >
-		</div>
-		<div class="input-group">
-			<label>Wachtwoord</label>
-			<input type="password" name="password">
-		</div>
-		<div class="input-group">
-			<button type="submit" class="btn" name="login_user">Login</button>
-		</div>
-		<p>
-			Nog geen account? <a href="register.php">Sign up</a>
-		</p>
-	</form>
-
-</body>
+    </body>
 </html>

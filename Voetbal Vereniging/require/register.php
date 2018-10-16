@@ -25,6 +25,7 @@ if (isset($_POST['reg_user'])) {
     // register user if there are no errors in the form
     if (count($errors) == 0) {
         $password = $password_1;
+        $password = hash("sha256",$password);
         $query = $conn->prepare("INSERT INTO member (id, username, email, password, firstname, gender, membercol, type, year_driving_licence) 
                                             VALUES ('$member_nr','$username','$email','$password','$f_name','$gender','$member_col','$type','$year_driving_licence')");
         $query->execute();
