@@ -15,7 +15,7 @@
                         <h2>Login</h2>
                         <p>Vul uw gebruikersnaam en wachtwoord in.</p>
                     </div>
-                    <form method="post" action="login2.php">
+                    <form method="post" action="login.php">
                         <div class="form-group">
                             <input type="text" class="form-control" name="username" placeholder="Email Address">
                         </div>
