@@ -4,7 +4,9 @@ unset($_SESSION["username"]);
 unset($_SESSION["password"]);
 
 require "header.html";
+
 header('Refresh: 3; URL = login.php');
+require "head.php";
 ?>
 <link rel="stylesheet" type="text/css" href="css/head.css">
 <link rel="stylesheet" type="text/css" href="css/logout.css">

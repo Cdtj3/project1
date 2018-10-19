@@ -45,13 +45,10 @@ $query->execute();
 $result = $query->fetchAll(PDO::FETCH_OBJ);
 ?>
 <?php require "header.html";?>
+<?php require "head.php" ?>
 <!DOCTYPE html>
 <html lang="en">
-
-<?php require "head.php" ?>
-
 <body id="page-top">
-
 <section class="portfolio" id="foto">
     <div class="container">
         <h2 class="text-center text-uppercase text-secondary mb-0">Foto</h2>
@@ -83,6 +80,8 @@ $result = $query->fetchAll(PDO::FETCH_OBJ);
 
     </div>
 </section>
+</body>
+
 <form method="POST" action="foto.php" enctype="multipart/form-data">
     <input type="hidden" name="size" value="1000000">
     <div>
@@ -100,6 +99,8 @@ $result = $query->fetchAll(PDO::FETCH_OBJ);
         <button type="submit" name="upload">Bevestiging upload foto</button>
     </div>
 </form>
-</div>
-</body>
-<?php require "footer.html" ?>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
+
+<?php require "footer.html" ;?>
