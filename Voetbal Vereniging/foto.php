@@ -48,25 +48,7 @@ $result = $query->fetchAll(PDO::FETCH_OBJ);
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-
-    <title>Voetbal vereniging AS80</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom fonts for this template -->
-    <link href="vendor/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-
-    <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
-
-    <!-- Custom styles for this template -->
-    <link href="css/freelancer.min.css" rel="stylesheet">
-
-</head>
+<?php require "head.php" ?>
 
 <body id="page-top">
 
@@ -101,8 +83,6 @@ $result = $query->fetchAll(PDO::FETCH_OBJ);
 
     </div>
 </section>
-</body>
-
 <form method="POST" action="foto.php" enctype="multipart/form-data">
     <input type="hidden" name="size" value="1000000">
     <div>
@@ -121,4 +101,5 @@ $result = $query->fetchAll(PDO::FETCH_OBJ);
     </div>
 </form>
 </div>
+</body>
 <?php require "footer.html" ?>

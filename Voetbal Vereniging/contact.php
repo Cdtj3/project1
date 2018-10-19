@@ -1,12 +1,4 @@
-<?php include('require/server.php'); require "header.html";
-// Check if user is logged in
-session_start();
-
-if (!isset($_SESSION['username'])) {
-    $_SESSION['msg'] = "You must log in first";
-    header('location: login.php');
-}
-?>
+<?php require "require/logincheck.php";?>
 <?php require "header.html";?>
 <!DOCTYPE html>
 <html lang="en">
