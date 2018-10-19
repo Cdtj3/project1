@@ -1,4 +1,5 @@
 <?php require "require/logincheck.php";?>
+<?php require "header.html"; ?>
 <!DOCTYPE html>
 <html lang="en">
     <?php require "head.php" ?>
