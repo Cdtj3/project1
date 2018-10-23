@@ -16,7 +16,7 @@
                 <a href="https//www.blank.nl" target="_blank" style="color: white; text-decoration: none;"> <li> Manage Gebruiker </li><a/>
                 <a href="https//www.blank.nl" target="_blank" style="color: white; text-decoration: none;"> <li> Manage Media </li><a/>
                 <a href="https//www.blank.nl" target="_blank" style="color: white; text-decoration: none;"> <li> Manage Content  </li><a/>
-                <a href="logout.php" target="_blank" style="color: white; text-decoration: none;"> <li> Logout </li><a/>
+                <a href="logout_admin.php" target="_blank" style="color: white; text-decoration: none;"> <li> Logout </li><a/>
             </ul>
         </div>
 
