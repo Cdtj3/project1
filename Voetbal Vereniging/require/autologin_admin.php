@@ -6,7 +6,7 @@ $query->execute();
 $id = $query->fetchObject();
 
 if($id != null){
-    $_SESSION["admin"] = $id;
+    $_SESSION["username"] = $id;
     $_SESSION['success'] = "You are now logged in";
     header('location: admin.php');
 }
