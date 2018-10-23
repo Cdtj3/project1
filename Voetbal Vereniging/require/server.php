@@ -14,8 +14,8 @@
 //        $database = "2018_P1_05_design_vv";
     $servername = "localhost:3307";
     $user = "root";
-    $pass = "root";
-    $database = "2018_p1_05_design_vv";
+    $pass = "Supergamer26";
+    $database = "design_vv_app";
 
     try {
         $conn = new PDO("mysql:host=$servername;dbname=$database", $user, $pass);

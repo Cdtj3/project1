@@ -1,7 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: achraf
- * Date: 23-10-2018
- * Time: 12:43
- */
+session_start();
+
+if (!isset($_SESSION['username'])) {
+    $_SESSION['msg'] = "You must log in first";
+    header('location: login_admin.php');
+}
+?>
