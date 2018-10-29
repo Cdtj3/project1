@@ -1,56 +1,18 @@
-
+<link rel="stylesheet" type="text/css" href="css/admin_gebruikers.css">
 <?php include('require/register.php') ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<div class="signup_container">
-    <form method="post" action="register.php">
-        <?php include('errors.php'); ?>
-        <fieldset>
-            <div class="signup_form">
-                <label>gebruikesnaam</label>
-                <input type="text" name="username">
-            </div>
-            <div class="signup_form">
-                <label>email</label>
-                <input type="email" name="email">
-            </div>
-            <div class="signup_form">
-                <label>wachtwoord</label>
-                <input type="password" name="password_1">=
-            </div>
-            <div class="signup_form">
-                <label>wachtwoord bevestigen</label>
-                <input type="password" name="password_2">
-            </div>
-            <div class="signup_form">
-                <label>voornaam</label>
-                <input type="text" name="f_name">
-            </div>
-            <div class="signup_form">
-                <label>geslacht</label>
-                <input type="radio" name="gender" value="Male"> Man
-                <input type="radio" name="gender" value="Female"> Vrouw
-                <input type="radio" name="gender" value="Other"> Anders
-            </div>
-            <div class="signup_form">
-                <label>type</label>
-                <input type="text" name="type">
-            </div>
-            <div class="signup_form">
-                <label>membercol</label>
-                <input type="text" name="member_col">
-            </div>
-            <div class="signup_form">
-                <label>rijbewijs</label>
-                <input type="radio" name="year_driving_licence" value="1"> ja
-                <input type="radio" name="year_driving_licence" value="0"> nee
-            </div>
-            <div class="signup_header">
-                <label>ledennummer</label>
-                <input type="int" name="member_nr">
-            </div>
-            <button type="submit" class="btn" name="reg_user">registreren</button>
-        </fieldset>
-    </form>
+<link href="//db.onlinewebfonts.com/c/a4e256ed67403c6ad5d43937ed48a77b?family=Core+Sans+N+W01+35+Light" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="form.css" type="text/css">
+<div class="body-content">
+    <div class="module">
+        <h1>Create an account</h1>
+        <form class="form" action="form.php" method="post" enctype="multipart/form-data" autocomplete="off">
+            <div class="alert alert-error"></div>
+            <input type="text" placeholder="User Name" name="username" required />
+            <input type="email" placeholder="Email" name="email" required />
+            <input type="password" placeholder="Password" name="password" autocomplete="new-password" required />
+            <input type="password" placeholder="Confirm Password" name="confirmpassword" autocomplete="new-password" required />
+            <div class="avatar"><label>Select your avatar: </label><input type="file" name="avatar" accept="image/*" required /></div>
+            <input type="submit" value="Register" name="register" class="btn btn-block btn-primary" />
+        </form>
+    </div>
 </div>
