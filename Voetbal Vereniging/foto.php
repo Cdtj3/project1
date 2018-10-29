@@ -81,13 +81,12 @@ $result = $query->fetchAll(PDO::FETCH_OBJ);
     </div>
 </section>
 </body>
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br>
 <form method="POST" action="foto.php" enctype="multipart/form-data">
     <input type="hidden" name="size" value="1000000">
     <div>
         <input type="file" name="image">
-    </div>
-    <div>
       <textarea
           id="text"
           cols="40"
